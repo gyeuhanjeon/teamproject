@@ -1,0 +1,64 @@
+
+.naver{
+    font-size: 5em;
+    color : green;
+    font-weight: 900;
+    position: relative;
+    bottom: 70px;
+    left : 80px;
+
+}
+
+.background{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0px solid lightgrey;
+    background-color:rgb(233, 229, 229);
+    width:100vw;
+    height: 100vh;
+}
+
+
+.input1{
+    width:370px;
+    height: 40px; 
+}
+
+
+.input1 :nth-child(1){
+    width:370px;
+    height: 40px; 
+    border-right-color: rgb(165, 161, 161);
+    border-top-color: rgb(165, 161, 161);
+    border-left-color: rgb(165, 161, 161);
+    border-bottom-color: rgb(165, 161, 161);
+}
+.input1 :nth-child(2){
+    width:370px;
+    height: 40px; 
+    border-right-color: rgb(165, 161, 161);
+    border-top: rgb(165, 161, 161);
+    border-left-color: rgb(165, 161, 161);
+    border-bottom-color: rgb(165, 161, 161);
+}
+.input1 :nth-child(3){
+    width:370px;
+    height: 40px; 
+    border-right-color: rgb(165, 161, 161);
+    border-top: rgb(165, 161, 161);
+    border-left-color: rgb(165, 161, 161);
+    border-bottom-color: rgb(165, 161, 161);
+}
+
+
+
+
+
+
+
+
+
+
+
+
