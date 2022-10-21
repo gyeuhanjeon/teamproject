@@ -1,3 +1,6 @@
+*{box-sizing: border-box;}
+
+
 
 .naver{
     font-size: 5em;
@@ -6,7 +9,6 @@
     position: relative;
     bottom: 70px;
     left : 80px;
-
 }
 
 .background{
@@ -20,37 +22,16 @@
 }
 
 
-.input1{
+.input1 input{
+
     width:370px;
     height: 40px; 
 }
 
-
-.input1 :nth-child(1){
+.input1 button{
     width:370px;
     height: 40px; 
-    border-right-color: rgb(165, 161, 161);
-    border-top-color: rgb(165, 161, 161);
-    border-left-color: rgb(165, 161, 161);
-    border-bottom-color: rgb(165, 161, 161);
 }
-.input1 :nth-child(2){
-    width:370px;
-    height: 40px; 
-    border-right-color: rgb(165, 161, 161);
-    border-top: rgb(165, 161, 161);
-    border-left-color: rgb(165, 161, 161);
-    border-bottom-color: rgb(165, 161, 161);
-}
-.input1 :nth-child(3){
-    width:370px;
-    height: 40px; 
-    border-right-color: rgb(165, 161, 161);
-    border-top: rgb(165, 161, 161);
-    border-left-color: rgb(165, 161, 161);
-    border-bottom-color: rgb(165, 161, 161);
-}
-
 
 
 
