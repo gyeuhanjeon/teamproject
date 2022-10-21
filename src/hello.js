@@ -22,12 +22,12 @@ const Hello = () => {
     const [errorName, setErrorName] = useState('');
 
     // 유효성 검사
-    const [isId, setIsId] = useState("");
-    const [isPwd, setIsPwd] = useState("");
-    const [isPwdchk, setIsPwdchk] = useState("");
-    const [isEmail, setIsEmail] = useState("");
-    const [isPhone, setIsPhone] = useState("");
-    const [isName, setIsName] = useState("");
+    const [isId, setIsId] = useState(false);
+    const [isPwd, setIsPwd] = useState(false);
+    const [isPwdchk, setIsPwdchk] = useState(false);
+    const [isEmail, setIsEmail] = useState(false);
+    const [isPhone, setIsPhone] = useState(false);
+    const [isName, setIsName] = useState(false);
 
     const onChangeId = useCallback(e => {
         setId(e.target.value);
@@ -54,7 +54,7 @@ const Hello = () => {
     }, []);
     const onChangePwdchk = useCallback(e => {
         setPwdchk(e.target.value);
-        if (e.target.value == pwd) {
+        if (e.target.value === pwd) {
             setErrorPwdchk("비밀번호 확인이 완료 되었습니다.")
             isSubmit();
         } else {
@@ -105,7 +105,7 @@ const Hello = () => {
             <div>
                 <div className="naver">naver</div>
                 <div className="input1">
-                    <input type={"text"} onChange={onChangeId} value={id} placeholder="아이디 @naver.com"></input>
+                    <input type={"text"} onChange={onChangeId} value={id} placeholder="아이디                                                                   @naver.com"></input>
                     <div>{errorId}</div>
                     <input type={"password"} onChange={onChangePwd} value={pwd} placeholder="비밀번호"></input>
                     <div>{errorPwd}</div>
@@ -117,7 +117,7 @@ const Hello = () => {
                     <div>{errorPhone}</div>
                     <input type={"text"} onChange={onChangeName} value={name} placeholder="이름"></input>
                     <div>{errorName}</div>
-                    {submit && <button  onClick={submit}>회원가입</button>
+                    {submit && <button type="submit" onClick={onsubmit}>회원가입</button>
                     }
                 </div>
             </div>
