@@ -11,7 +11,9 @@ const Hello = () => {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [name, setName] = useState('');
-    const [submit, setSubmit] = useState('false');
+    const [submit, setSubmit] = useState(false);
+    const [showPassword1, setShowPassword1] = useState(false)
+    const [showPassword2, setShowPassword2] = useState(false)
 
 
     const [errorId, setErrorId] = useState('');
@@ -21,13 +23,6 @@ const Hello = () => {
     const [errorPhone, setErrorPhone] = useState('');
     const [errorName, setErrorName] = useState('');
 
-    // 유효성 검사
-    const [isId, setIsId] = useState(false);
-    const [isPwd, setIsPwd] = useState(false);
-    const [isPwdchk, setIsPwdchk] = useState(false);
-    const [isEmail, setIsEmail] = useState(false);
-    const [isPhone, setIsPhone] = useState(false);
-    const [isName, setIsName] = useState(false);
 
     const onChangeId = useCallback(e => {
         setId(e.target.value);
@@ -41,6 +36,7 @@ const Hello = () => {
         }
     }, []);
     const onChangePwd = useCallback(e => {
+
         setPwd(e.target.value);
         const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/
         if (e.target.value.length === 0 || e.target.value === '') {
@@ -53,8 +49,9 @@ const Hello = () => {
         }
     }, []);
     const onChangePwdchk = useCallback(e => {
-        setPwdchk(e.target.value);
-        if (e.target.value === pwd) {
+        const pwdCurrent = e.target.value;
+        setPwdchk(pwdCurrent);
+        if (pwdCurrent === pwd) {
             setErrorPwdchk("비밀번호 확인이 완료 되었습니다.")
             isSubmit();
         } else {
@@ -96,33 +93,56 @@ const Hello = () => {
     }, []);
 
     const isSubmit = () => {
-        if(id && pwd && pwdchk && name && email && phone) setSubmit(true);
+        if (id && pwd && pwdchk && name && email && phone)
+            return setSubmit(true);
+    }
+
+    const isShow1 =()=>{
+        if(showPassword1===true){
+            setShowPassword1(false)
+        }else{setShowPassword1(true)}
+    }
+    const isShow2 =()=>{
+        if(showPassword2===true){
+            setShowPassword2(false)
+        }else{setShowPassword2(true)}
     }
 
     return (
 
         <div className="background">
             <div>
-                <div className="naver">naver</div>
-                <div className="input1">
-                    <input type={"text"} onChange={onChangeId} value={id} placeholder="아이디                                                                   @naver.com"></input>
-                    <div>{errorId}</div>
-                    <input type={"password"} onChange={onChangePwd} value={pwd} placeholder="비밀번호"></input>
-                    <div>{errorPwd}</div>
-                    <input type={"password"} onChange={onChangePwdchk} value={pwdchk} placeholder="비밀번호 재확인"></input>
-                    <div>{errorPwdchk}</div>
-                    <input type={"email"} onChange={onChangeEmail} value={email} placeholder="이메일"></input>
-                    <div>{errorEmail}</div>
-                    <input type={"text"} onChange={onChangePhone} value={phone} placeholder="핸드폰 번호"></input>
-                    <div>{errorPhone}</div>
-                    <input type={"text"} onChange={onChangeName} value={name} placeholder="이름"></input>
-                    <div>{errorName}</div>
-                    {submit && <button type="submit" onClick={onsubmit}>회원가입</button>
-                    }
-                </div>
+                <form>
+                    <div className="naver"  onClick={() => window.location.reload()}>naver</div>
+                    <div className="input1">
+                        <input type={"text"} onChange={onChangeId} value={id} placeholder="아이디                                                                   @naver.com"></input>
+                        <div>{errorId}</div>
+                        <span className="span">
+                        <input type={showPassword1 ? 'password' : 'text'} onChange={onChangePwd} value={pwd} placeholder="비밀번호">
+                        </input>
+                        <img className="eye" onClick={isShow1}  src="img/눈모양.png" alt="눈모양"></img>
+                        </span>
+                        <div>{errorPwd}</div>
+                        <span className="span">
+                        <input type={showPassword2 ? 'password' : 'text'} onChange={onChangePwdchk} value={pwdchk} placeholder="비밀번호 재확인">
+                        </input>
+                        <img className="eye" onClick={isShow2}  src="img/눈모양.png" alt="눈모양"></img>
+                        </span>
+                        <div>{errorPwdchk}</div>
+                        <input type={"email"} onChange={onChangeEmail} value={email} placeholder="이메일"></input>
+                        <div>{errorEmail}</div>
+                        <input type={"text"} onChange={onChangePhone} value={phone} placeholder="핸드폰 번호"></input>
+                        <div>{errorPhone}</div>
+                        <input type={"text"} onChange={onChangeName} value={name} placeholder="이름"></input>
+                        <div>{errorName}</div>
+                        {submit && <button type="submit" onClick={onsubmit}>회원가입</button>
+                        }
+                    </div>
+                </form>
             </div>
-        </div>
 
+        </div>
+        // 
     )
 }
 export default Hello;
