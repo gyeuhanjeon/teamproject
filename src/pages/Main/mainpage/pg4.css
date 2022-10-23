@@ -1,0 +1,26 @@
+.navVar{
+    display: flex;
+    width: 100vw;
+    height:30px;
+    margin:20px auto;
+    background-color: orangered;
+
+}
+
+.navVar .a{
+    margin: 0 auto;
+    color:aliceblue;
+    margin-top: 5px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.a :visited{
+    color:white;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.where{
+    font-size: 50px;
+}

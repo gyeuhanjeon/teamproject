@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0px solid lightgrey;
+    background-color:rgb(233, 229, 229);
+    width:100vw;
+    height: 100vh;
+}
+
+.loginbox{
+    width: 300px;
+    height:300px;
+}
+
+.inputbox{
+    width:400px;
+    height:30px;
+}
+
+.img1 img{
+    width:400px;
+}
+.staySign{
+    margin: 10px auto;
+    margin-bottom: 20px;
+}
+
+.staySign .check{
+    width:100px
+    fit-content
+}
+.staySign span{
+    font-size: 20px;
+    position: relative;
+    left: 20px
+}
+
+.staySign span:nth-of-type(2){
+    position: relative;
+    margin-top: 20px;
+}
+
+.item2 button{
+    width:400px;
+    height: 30px;
+    position: relative;
+    bottom: 10px;
+}
+
+.button_signup{
+    position: relative;
+    top:10px;
+    width: 400px;
+    height: 30px;
+}
+.button_forgot{
+    position: relative;
+    width: 400px;
+    height: 30px;
+}
