@@ -57,9 +57,6 @@ const Login = () => {
                             </Link>
                         </div>
                     </button>
-                    <div className="bdlogo">
-                        {/* <img src={imgBottom} alt="NedBank" /> */}
-                    </div>
                 </div>
             </div>
         </div>

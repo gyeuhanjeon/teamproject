@@ -10,6 +10,7 @@ const Home =()=>{
         <Link to ="/pg2" className="a">나의 MBTI</Link>
         <Link to ="/pg3" className="a">MBTI 오픈채팅</Link>
         <Link to ="/pg4" className="a">MBTI 단짝친구찾기</Link>
+        <Link to ="/" className="a">로그아웃</Link>
         </div>
     )
 }
